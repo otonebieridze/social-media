@@ -210,6 +210,16 @@ main .fa-bars {
     top: calc(var(--header-height) + 10px);
     left: 10px;
     cursor: pointer;
+    z-index: 2;
+    visibility: hidden;
+}
+main .fa-times {
+    position: fixed;
+    font-size: 45px;
+    top: calc(var(--header-height) + 10px);
+    left: 10px;
+    cursor: pointer;
+    z-index: 2;
     visibility: hidden;
 }
 .MAIN_LEFT_CONTAINER {
@@ -686,7 +696,11 @@ main .fa-bars {
     }
     main .fa-bars {
         visibility: inherit;
-        z-index: 2;
+    }
+}
+@media only screen and (min-width:1270px) {
+    main .fa-bars, main .fa-times {
+        display: none;
     }
 }
 @media only screen and (max-width:1065px) {
@@ -820,7 +834,7 @@ main .fa-bars {
     .MAIN_CONTAINER .STORY_BOX .story p {
         display: none;
     }
-    main .fa-bars {
+    main .fa-bars, main .fa-times {
         font-size: 25px;
     }
     header .FAR_BOX {

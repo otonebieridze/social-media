@@ -15,13 +15,23 @@ $(document).ready(function() {
 
 
 let FA_BARS = document.querySelector('.fa-bars');
+let FA_TIMES = document.querySelector('.fa-times');
 let MAIN_LEFT_CONTAINER = document.querySelector('.MAIN_LEFT_CONTAINER');
 let MAIN_LEFT_CONTAINER_FIRST_UL = document.querySelector('.MAIN_LEFT_CONTAINER_FIRST_UL');
 let MAIN_LEFT_CONTAINER_SECOND_UL = document.querySelector('.MAIN_LEFT_CONTAINER_SECOND_UL');
 FA_BARS.addEventListener('click', () => {
-    MAIN_LEFT_CONTAINER.classList.toggle('MAIN_LEFT_CONTAINER_VISIBLE');
-    MAIN_LEFT_CONTAINER_FIRST_UL.classList.toggle('MAIN_LEFT_CONTAINER_FIRST_UL_VISIBLE');
-    MAIN_LEFT_CONTAINER_SECOND_UL.classList.toggle('MAIN_LEFT_CONTAINER_SECOND_UL_VISIBLE');
+    MAIN_LEFT_CONTAINER.classList.add('MAIN_LEFT_CONTAINER_VISIBLE');
+    MAIN_LEFT_CONTAINER_FIRST_UL.classList.add('MAIN_LEFT_CONTAINER_FIRST_UL_VISIBLE');
+    MAIN_LEFT_CONTAINER_SECOND_UL.classList.add('MAIN_LEFT_CONTAINER_SECOND_UL_VISIBLE');
+    FA_BARS.style.visibility = 'hidden';
+    FA_TIMES.style.visibility = 'visible';
+})
+FA_TIMES.addEventListener('click', () => {
+    MAIN_LEFT_CONTAINER.classList.remove('MAIN_LEFT_CONTAINER_VISIBLE');
+    MAIN_LEFT_CONTAINER_FIRST_UL.classList.remove('MAIN_LEFT_CONTAINER_FIRST_UL_VISIBLE');
+    MAIN_LEFT_CONTAINER_SECOND_UL.classList.remove('MAIN_LEFT_CONTAINER_SECOND_UL_VISIBLE');
+    FA_TIMES.style.visibility = 'hidden';
+    FA_BARS.style.visibility = 'visible';
 })
 
 let DARK_LIGHT_BOX = document.querySelector('.DARK_LIGHT_BOX');
